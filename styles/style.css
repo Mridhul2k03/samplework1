@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'montserrat', sans-serif; */
+    font-family: "Merriweather Sans", sans-serif;
+}
+
+
+header .navbar{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+header .nav-item{
+    margin-inline: 5px;
+}
+header .nav-item .nav-link{
+    /* color: rgb(101, 101, 101); */
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding-inline: 0 !important;
+}
+header .nav-item .nav-link.active{
+    color: rgb(184, 1, 1);
+}
+header .nav-item .nav-link {
+    position: relative; /* Required for positioning the ::after pseudo-element */
+    text-transform: uppercase;
+}
+
+header .navigate .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(184, 1, 1);
+    transition: width 0.3s ease; /* Smooth transition for the line */
+}
+header  .nav-item .nav-link:hover{
+    color:rgb(184, 1, 1) ;
+}
+header .navigate .nav-item .nav-link:hover::after {
+    width: 100%; /* Expand the line on hover */
+}
+
+header .navigate .nav-item .nav-link.active::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(184, 1, 1);
+    margin-top: 5px;
+}
+header .navbar-brand{
+    font-weight: 500;
+    color: white;
+}
+header .navbar-brand:hover{
+    color: rgb(184, 1, 1);
+}
+
+@media (max-width: 768px) {
+    
+header .navigate .nav-item .nav-link.active::after{
+    display: none;
+}
+header .navigate .nav-item .nav-link:hover::after {
+    display: none;
+}
+}
+
+
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.input-search {
+    height: 35px;
+    width: 35px;
+    border: none;
+    padding: 5px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+    border: 1px solid rgb(0, 0, 0);
+    padding-right: 35px;
+    color: #000000;
+}
+
+.input-search::placeholder {
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+.btn-search {
+    width: 35px;
+    height: 35px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 2px;
+    color: #000000;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btn-search:focus {
+    color: #000000;
+}
+
+.btn-search:focus~.input-search,
+.input-search:focus {
+    width: 200px;
+    border-radius: 0px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    transition: all 400ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus .btn-search{
+    color: rgb(0, 0, 0);
+}
+
+
+/* End Header */
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 1rem;
+}
+.head-1{
+    background-color: lightblue;
+    width: fit-content;
+    padding: 15px 25px;
+    
+}
+
+/* category */
+
+.category .card{
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: all 0.3s ease-in-out;
+}
+.category .card:hover{
+    transform: translateY(-10px);
+}
+.category .card .card-title{
+    text-shadow: rgba(6, 24, 44, 0.4) 0px 0px 2px, 
+    rgba(6, 24, 44, 0.65) 0px 4px 6px, 
+    rgba(255, 255, 255, 0.08) 0px 1px 0px;
+}
+
+
+
+
+
+
+
+
+/* single product */
+
+.single .product .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.single .product .left img{
+    width: 80%;
+}
+
+.single .product .right{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.single .product .right h3{
+    font-size: 25px;
+}
+.single .product .right h5{
+    font-size: 16px;
+    color: #949494;
+}
+.single .product .right p{
+    font-size: 18px;
+    color: #000000;
+    font-weight: 300;
+}
+.single .product .right .buttons .btn{
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+}
+.single .product .right .buttons .btn:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
+
+
+
+
+/* footer */
+
+.footer {
+    padding-block: 1rem;
+    background-color: rgb(228, 228, 228);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer .r1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer .r1 .col-md-4 {
+    text-align: start;
+}
+
+.footer ul li {
+    padding-top: 14px;
+    padding-left: 5PX;
+}
+
+.footer ul li a,
+.footer h4 {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+
+}
+
+.footer ul li i {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+.footer .social ul{
+    display: flex;
+    gap: 10px;
+}
+.footer .r1::after{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.685);
+    margin-top: 1rem;
+}
+.footer .r2{
+    margin-top: 1rem !important;
+}
+.copy .row {
+    text-align: center;
+    padding-block: 5px;
+}
+
+.copy .row p {
+    color: #000000;
+    font-size: 14px;
+    padding-block: 4px;
+    font-weight: 600;
+}
+
+.copy .row p a {
+    text-decoration: none;
+    color: #000000;
+
+}
+
+.copy .row p .ex {
+    font-size: 16px;
+}
+
+/* .copy .row p .ex:hover {
+    color: #c3191c;
+} */
+
+@media (max-width: 768px) {
+    .footer .row .col-md-4  {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .footer ul li {
+        padding-left: 0;
+    }
+    .footer .social ul{
+        justify-content: center;
+    }
+}
